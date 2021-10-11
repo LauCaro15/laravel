@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             /* column:String */
             $table->string('name',100)->nullable()->default('text');
             $table->bigInteger('category_id')->unsigned()->nullable();
-            $table->text('descripyion')->nullable();
+            $table->text('description')->nullable();
             $table->enum('state_post', ['published', 'not_published', 'in_review'])->default('not_published');
             $table->timestamps();
         });

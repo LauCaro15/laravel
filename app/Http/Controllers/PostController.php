@@ -15,7 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('dashboard.post.index');
+        $posters = Post::orderBy('name','ASC')-> paginate(10);
+        return view('dashboard.post.index', ['posters'=>$posters]);
     }
 
     /**
@@ -48,7 +49,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('dashboard.post.index', ['post'=>$post]);
     }
 
     /**
