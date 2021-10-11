@@ -38,7 +38,7 @@ class PostController extends Controller
     public function store(PostStore $request)
     {
         Post::create($request -> validated());
-        
+
         return back()->with('status','Publicación creada con éxito');
     }
 
@@ -85,6 +85,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return back()->with('status','Post eliminado con éxito');
     }
 }

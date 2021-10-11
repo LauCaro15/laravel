@@ -26,7 +26,7 @@
           <a href="{{ route('post.show',$post -> id)}}" class="btn btn-info">Ver</a>
           <a href="{{ route('post.edit',$post -> id)}}" class="btn btn-info">Editar</a>
           <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
-          data-id="{{ $post->id}}">
+          data-id="{{ $post->id }}">
             Eliminar
           </button>
         </td>
@@ -58,11 +58,11 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Cancelar
         </button>
-        <form id="formDelete" method="POST" action="{{ route('post.destroy',0) }}" 
-        data-action="{{ route('post.destroy',0) }}">
+        <form id="formDelete" method="POST" action="{{ route('post.destroy', 0) }}" 
+        data-action="{{ route('post.destroy', 0) }}">
         @method('DELETE')
         @csrf
-          <button type="button" class="btn btn-danger btn-sm">Confirmar</button>
+          <button type="submit" class="btn btn-danger btn-sm">Confirmar</button>
         </form>
         
       </div>
