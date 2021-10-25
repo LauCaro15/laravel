@@ -4,5 +4,4 @@
     @method('put')
     @include('dashboard.post.form')
 </form>
-
 @endsection
