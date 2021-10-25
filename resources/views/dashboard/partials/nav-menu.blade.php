@@ -17,7 +17,7 @@
           <a class="nav-link" href="{{ route('post.index') }}">Publicaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('post.index') }}">Categorías</a>
+          <a class="nav-link" href="{{ route('category.index') }}">Categorías</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
@@ -27,7 +27,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('post.index') }}">Publicaciones</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('post.index') }}">Categorías</a>
+            <a class="dropdown-item" href="{{ route('category.index') }}">Categorías</a>
           </div>
         </li>
       </ul>
