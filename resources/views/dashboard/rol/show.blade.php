@@ -3,15 +3,14 @@
 <div class="container">
     <div class="jumbotron">
         <div class="form-group mb-3">        
-            <input readonly type="text" class="form-control" name ="name" id ="name" 
-            placeholder="nombre publicación" value= "{{old('name',$post->name)}}" >
+            <input readonly type="text" class="form-control" name ="rol" id ="rol" 
+            placeholder="nombre publicación" value= "{{old('rol',$rol->rol)}}" >
         </div>
-        
         
         <div class="form-group mb-3">
             <label class="form label" for="description">Contenido</label>
             <textarea readonly name="description" id="description" cols="30" rows="10" class="form-control" placeholder="nombre publicación">
-                {{old('description',$post->description)}}
+                {{old('description',$rol->description)}}
             </textarea>   
         </div>
         
