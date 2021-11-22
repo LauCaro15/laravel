@@ -1,11 +1,10 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests\CategoryStore;
 use App\Models\Category;
-use Illuminate\Http\Request;
-
+ 
 class CategoryController extends Controller
 {
     /**
@@ -15,10 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('name','ASC')-> paginate(10);
-        return view('dashboard.category.index', ['categories'=>$categories]);
+        $categories = Category::orderBy('id','ASC')->paginate(10);
+        return view('dashboard.category.index',['categories'=>$categories]);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -26,9 +25,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
+   
         return view('dashboard.category.create', ['category'=> new Category()]);
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -37,11 +37,10 @@ class CategoryController extends Controller
      */
     public function store(CategoryStore $request)
     {
-        Category::create($request -> validated());
-
-        return back()->with('status','Categoría creada con éxito');
+        Category::create($request ->validated());
+        return back()->with('status', 'Categoría creada con éxito');
     }
-
+ 
     /**
      * Display the specified resource.
      *
@@ -50,9 +49,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('dashboard.category.show', ['category'=>$category]);
+        return view('dashboard.category.show',['category'=> $category]);
+       
     }
-
+ 
     /**
      * Show the form for editing the specified resource.
      *
@@ -62,8 +62,9 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         return view('dashboard.category.edit',['category'=> $category]);
+       
     }
-
+ 
     /**
      * Update the specified resource in storage.
      *
@@ -73,10 +74,10 @@ class CategoryController extends Controller
      */
     public function update(CategoryStore $request, Category $category)
     {
-        $category->update($request -> validated());
-        return back()->with('status','Categoría actualizada con éxito');
+        $category->update($request ->validated());
+        return back()->with('status', 'Categoría actualizada con éxito');
     }
-
+ 
     /**
      * Remove the specified resource from storage.
      *
@@ -86,6 +87,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return back()->with('status','Categoría eliminado con éxito');
+        return back()->with('status', 'Categoría eliminada con éxito');
     }
 }

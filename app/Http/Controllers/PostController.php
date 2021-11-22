@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostStore;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.post.create', ['post'=> new Post()]);
+        // Carga en la lista desplegable las categorias existentes
+        $categories = Category::pluck('id', 'name');
+        return view('dashboard.post.create', ['post'=> new Post(), 'categories'=> $categories]);
     }
 
     /**
@@ -60,7 +63,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.post.edit',['post'=> $post]);
+        $categories = Category::pluck('id', 'name');
+        return view('dashboard.post.edit',['post'=> $post, 'categories'=> $categories]);
     }
 
     /**
